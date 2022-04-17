@@ -1,0 +1,51 @@
+<meta charset="utf-8">
+
+<script>
+		
+		var salarios = [];
+		
+		var habitantes = Math.round(Math.random() * 100000 + 1);
+
+		var filhos =[];
+
+		var soma = 0;
+
+		var soma2 = 0;
+
+		
+		for (var i = 0; i < habitantes; i++) {
+			
+			salarios.push(Math.round(Math.random() * 10000));
+			filhos.push(Math.round(Math.random() * 4));	
+
+		}
+
+		for (var i = 0; i < habitantes; i++) {
+			soma += salarios[i];
+			soma2 += filhos[i];
+		}
+
+		
+		var maior = salarios[0];
+		for (var i = 0; i < habitantes; i++) {
+			
+			if (maior < salarios[i]) {
+				maior = salarios[i];
+			}
+		}
+		
+		var contador = 0;
+		for (var i = 0; i < habitantes; i++) {
+			
+			if (salarios[i] < 350) {
+				contador++;
+			}
+		}
+
+		var bolsaFamilia = (contador * 100) / habitantes;
+
+		document.write("A média de salário da cidade é: " + Math.round((soma / habitantes)) + " enquanto que a média do número de filhos é " + Math.round((soma2 / habitantes)) + ". Já o maior salário é " + maior + " e o percentual de pessoas que recebem o bolsa familia é " + Math.round(bolsaFamilia) + "%.") ;
+
+		
+
+</script>
